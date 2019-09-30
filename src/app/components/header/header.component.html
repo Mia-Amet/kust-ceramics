@@ -1,0 +1,46 @@
+<div class="header pt-4 pb-4 pr-5 pl-5 flex-centered">
+  <button class="menu-btn btn bg-transparent flex-centered" appTouchListener #touch="appTouchListener"
+          (click)="menuIsOpen = !menuIsOpen">
+    <svg viewBox="0 0 512 512" x="0" y="0" height="38" width="38">
+      <rect fill="none" id="border" y="20" x="10" width="492" height="452" [@border-animation]="( touch.touch | async )"/>
+    </svg>
+    <svg fill="#78d4ae" id="leaf" class="position-absolute" width="8" height="8" viewBox="0 0 512 512"
+         [@leaf-animation]="( touch.touch | async )">
+      <path d="M508.17,3.83c0,0-231.985-36.807-386.566,117.774C-6.319,249.527-3.173,430.459,1.717,489.058l243.671-243.67
+          l21.225,21.225L22.941,510.283c58.598,4.889,239.531,8.037,367.455-119.887C544.976,235.815,508.17,3.83,508.17,3.83z"/>
+    </svg>
+    <svg id="menu-icon" class="position-absolute" width="22" height="22" viewBox="0 0 800 800"
+          *ngIf="!menuIsOpen; else cross" @fade-animation>
+      <rect fill="#78d4ae" y="200" x="210" width="380" height="32"/>
+      <rect fill="#78d4ae" y="360" x="100" width="600" height="32"/>
+      <rect fill="#78d4ae" y="520" x="210" width="380" height="32"/>
+    </svg>
+  </button>
+</div>
+<div class="menu flex-centered pt-2 position-absolute" *ngIf="menuIsOpen" @slide-animation>
+  <ul class="navbar-nav text-center w-100">
+    <li class="nav-item text-uppercase">
+      <a class="nav-link" routerLink="/courses" routerLinkActive="active">Курсы и Мастер-Классы</a>
+      <div class="divider"></div>
+    </li>
+    <li class="nav-item text-uppercase">
+      <a class="nav-link" routerLink="/shop" routerLinkActive="active">Магазин</a>
+      <div class="divider"></div>
+    </li>
+    <li class="nav-item text-uppercase">
+      <a class="nav-link" routerLink="/about" routerLinkActive="active">О Нас</a>
+    </li>
+  </ul>
+</div>
+
+<ng-template #cross>
+  <svg id="menu-close" class="position-absolute" fill="#78d4ae" viewBox="0 0 224.512 224.512" width="18" @fade-animation>
+    <polygon points="224.507,6.997 217.521,0 112.256,105.258 6.998,0 0.005,6.997 105.263,112.254
+    0.005,217.512 6.998,224.512 112.256,119.24 217.521,224.512 224.507,217.512 119.249,112.254 	"/>
+  </svg>
+</ng-template>
+
+
+
+
+

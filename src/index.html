@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>KUST</title>
+  <title>KUST Ceramics</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-  <app-root></app-root>
-</body>
+  <body>
+    <app-root></app-root>
+    <script>
+      window.addEventListener('load', async () => {
+        let video = document.querySelector('#promo-video');
+        if (video) {
+          video.volume = 0;
+          await video.play();
+        }
+      });
+    </script>
+  </body>
 </html>
