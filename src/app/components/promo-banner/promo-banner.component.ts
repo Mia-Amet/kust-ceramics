@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-promo-banner',
@@ -21,7 +23,9 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 export class PromoBannerComponent implements OnInit {
   leafTimer = 0;
 
-  constructor() { }
+  constructor(
+    private scrollService: ScrollService
+  ) { }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -32,4 +36,7 @@ export class PromoBannerComponent implements OnInit {
     }, 1000);
   }
 
+  scrollDown() {
+    this.scrollService.scrollDown();
+  }
 }

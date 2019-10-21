@@ -1,0 +1,45 @@
+img {
+  height: 70vw;
+  min-width: 100vw;
+  opacity: .8;
+}
+
+.app-carousel-inner {
+  height: 70vw;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  .app-carousel-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity .3s ease-out;
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.indicators {
+  list-style-type: none;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  padding-left: 20px;
+  bottom: 7%;
+  align-self: flex-end;
+  z-index: 99;
+  li {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 6px;
+    width: 6px;
+    border-radius: 20px;
+    margin: 5px;
+    transition: background-color .2s ease-in-out;
+    &.active {
+      background-color: white;
+    }
+  }
+}

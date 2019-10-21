@@ -7,8 +7,19 @@
 
 html, body {
   font: normal 62.5%/150% 'PT Sans', sans-serif;
-  background-color: #070d13 !important;
+  background-color: #0d0f12 !important;
 }
 
-
+.carousel-indicators {
+  justify-content: flex-start !important;
+  margin-left: 20px !important;
+  margin-bottom: 30px !important;
+  li {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    margin: 6px !important;
+  }
+}
 

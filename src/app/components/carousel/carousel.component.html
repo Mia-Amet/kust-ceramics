@@ -1,0 +1,14 @@
+<div class="app-carousel-inner" #ref>
+  <div *ngFor="let pic of pics; index as i" class="app-carousel-item"
+       [ngClass]="{ 'active': ( activeIndex | async ) === i }">
+    <img src="{{ pic }}" alt="{{ courseName }} {{ i + 1 }}">
+  </div>
+  <ol class="indicators">
+  <li
+    *ngFor="let indicator of pics; index as i"
+    [ngClass]="{ 'active': ( activeIndex | async ) === i }"
+    (click)="slideToIndex(i, ref)"
+  ></li>
+</ol>
+</div>
+
