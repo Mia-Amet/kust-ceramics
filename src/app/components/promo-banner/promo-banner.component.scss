@@ -1,0 +1,60 @@
+h4 {
+  font: 500 1em/100% 'Montserrat', sans-serif;
+  opacity: .65;
+  letter-spacing: .1em;
+}
+
+.divider {
+  width: 22%;
+  height: 2px;
+  background: rgba(245, 245, 245, 0.65);
+}
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid {
+  height: 450px;
+}
+
+.video-overlay {
+  top: 0;
+  left: 0;
+  background-color: rgba(7, 13, 19, 0.75);
+  mix-blend-mode: multiply;
+}
+
+.promo-info {
+  flex-direction: column;
+}
+
+.logo-container {
+  top: 10px;
+  & #logo-leaf {
+    right: 27px;
+    top: 29px;
+    transform: rotate3d(0, 0, 0, 0);
+  }
+}
+
+.scroll-btn {
+  bottom: 14px;
+  & svg {
+    transform: scale(1);
+    fill-opacity: .45;
+    transition: .2s ease-in-out;
+    &:hover {
+      fill-opacity: .75;
+      transition: .2s ease-in-out;
+    }
+  }
+}
+
+#logo path {
+  transform: translateX(6.8%);
+}
+
+
