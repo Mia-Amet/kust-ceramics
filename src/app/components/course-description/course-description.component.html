@@ -1,0 +1,12 @@
+<div class="card-collapse overflow-hidden" (click)="collapse = !collapse">
+  <div *ngIf="collapse" class="collapse-content position-absolute mt-4">
+    <p class="card-text">{{ description.full[0] | truncate }}</p>
+  </div>
+  <div *ngIf="!collapse" class="expand-content mt-4" @collapse-animation>
+    <p *ngFor="let description of description.full" class="card-text">{{ description }}</p>
+    <h5 class="card-subtitle mt-5">Преимущества:</h5>
+    <ul class="advantages mt-3">
+      <li *ngFor="let advantage of description.advantages" class="card-text mb-2">{{ advantage }}</li>
+    </ul>
+  </div>
+</div>

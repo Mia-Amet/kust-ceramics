@@ -1,6 +1,6 @@
-interface CourseDescription {
-  full: string;
-  short?: string;
+export interface CourseDescription {
+  full: string[];
+  advantages: string[];
 }
 
 interface CourseDuration {
