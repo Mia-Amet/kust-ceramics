@@ -1,0 +1,36 @@
+footer {
+  background: #f0f0f0;
+  width: 100vw;
+  padding: 40px 0;
+  color: #1b1b1b;
+}
+
+h1 {
+  font: 200 18px/120% 'Roboto', sans-serif;
+  letter-spacing: .03em;
+}
+
+a {
+  color: #1b1b1b;
+  text-decoration: underline;
+}
+
+a.social {
+  font: 700 9px/120% 'Montserrat', sans-serif;
+  letter-spacing: .3em;
+  text-decoration: none !important;
+}
+
+.phone {
+  font-size: 16px;
+}
+
+.info {
+  font-size: 14px;
+}
+
+.line {
+  height: 2px;
+  width: 40px;
+  background: #1b1b1b;
+}

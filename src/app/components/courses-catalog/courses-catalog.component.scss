@@ -1,37 +1,49 @@
+h2 {
+  font: 600 32px/120% 'Cabin', sans-serif;
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+}
+
+button, .col-text {
+  font: 700 9px/120% 'Montserrat', sans-serif;
+  letter-spacing: .3em;
+}
+
+.col-text {
+  font-size: 8px;
+}
+
 .container-fluid {
   width: 100vw;
 }
 
 .section-heading {
-  color: #7ad4c7;
-  font: 300 34px/100% 'Montserrat', sans-serif;
+  color: white;
+  font: 400 54px/80% 'Roboto', sans-serif;
   padding: 0 7%;
+  letter-spacing: .03em;
   span {
-    font-size: 48px;
+    font: 200 34px/100% 'Montserrat', sans-serif;
+    letter-spacing: .02em;
   }
 }
 
-h6 {
-  font-size: 13px;
-}
-
-p {
-  font: 800 160px/100% 'Montserrat', sans-serif;
+.and {
+  font: 800 160px/100% 'Roboto', sans-serif;
   top: -30px;
-  left: 40%;
-  color: rgba(174, 240, 245, 0.05);
-}
-
-.card-text {
-  font: 400 13px/120% 'Montserrat', sans-serif;
-  left: 0;
-  top: 10px;
-  color: #b9c8cb;
+  left: 180px;
+  color: rgba(174, 240, 245, 0.1);
 }
 
 .card-heading {
-  color: #b9c8cb;
-  font: 400 16px/120% 'Montserrat', sans-serif;
+  color: white;
+  font: 100 22px/120% 'Roboto', sans-serif;
+  letter-spacing: .05em;
 }
 
 .card-carousel {
@@ -46,22 +58,31 @@ p {
   padding: 24px 7%;
 }
 
-.card-icons {
-  display: flex;
-  justify-content: space-between;
-}
-
 .column {
   color: #7ad4c7;
   fill: #7ad4c7;
   display: flex;
   align-items: center;
-  height: 30px;
   margin-top: 10px;
-  svg {
-    height: 20px;
-    margin-right: 8px;
-  }
 }
 
 
+
+// RESPONSIVE LAYOUTS -------------------------------------------
+
+// Adjust heading for small displays
+@media screen and (max-width: 367px) {
+  .section-heading {
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 323px) {
+  .section-heading {
+    span {
+      font-size: 28px;
+    }
+  }
+}
