@@ -23,6 +23,18 @@ export class CarouselComponent implements OnInit {
     this.activeIndex = this.carouselService.activeSlideIndex;
   }
 
+  onSwipeLeft(event, paneElement: Element) {
+    const index = this.index < this.pics.length - 1 ? this.index + 1 : 0;
+    this.slideToIndex(index, paneElement);
+    this.index = index;
+  }
+
+  onSwipeRight(event, paneElement: Element) {
+    const index = this.index > 0 ? this.index - 1 : this.pics.length - 1;
+    this.slideToIndex(index, paneElement);
+    this.index = index;
+  }
+
   slideToIndex(index: number, paneElement: Element) {
     if (index === this.index) return;
 
