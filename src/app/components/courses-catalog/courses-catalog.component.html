@@ -3,30 +3,34 @@
   <h1 class="section-heading text-uppercase mt-5">
     <strong>Курсы<br> <span>мастер-классы</span></strong>
   </h1>
-  <div class="card bg-transparent rounded-0 border-0 w-100 p-0 mt-5" *ngFor="let course of (courses | async)">
-    <div class="card-carousel mt-3">
-      <app-carousel [pics]="course.photos" [courseName]="course.name"></app-carousel>
-    </div>
-    <div class="card-body">
-      <h1 class="card-heading mt-4">{{ course.name | uppercase }}</h1>
-      <div class="card-icons p-0 d-flex justify-content-between w-100">
-        <div class="column">
-          <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.price }}</strong></h2>
-          <p class="col-text text-uppercase ml-2">грн</p>
+  <div class="courses-wrapper w-100">
+    <div class="courses w-100">
+      <div class="card bg-transparent rounded-0 border-0 p-0 mt-5" *ngFor="let course of (courses | async)">
+        <div class="card-carousel mt-3 item-responsive">
+          <app-carousel [pics]="course.photos" [courseName]="course.name"></app-carousel>
         </div>
-        <div class="column">
-          <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.duration.inHours | formatFractions }}</strong></h2>
-          <p class="col-text text-uppercase ml-2">часа</p>
+        <div class="card-body">
+          <h1 class="card-heading mt-4">{{ course.name | uppercase }}</h1>
+          <div class="card-icons p-0 d-flex justify-content-between w-100">
+            <div class="column">
+              <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.price }}</strong></h2>
+              <p class="col-text text-uppercase ml-2">грн</p>
+            </div>
+            <div class="column">
+              <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.duration.inHours | formatFractions }}</strong></h2>
+              <p class="col-text text-uppercase ml-2">часа</p>
+            </div>
+            <div class="column">
+              <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.level }}</strong></h2>
+              <p class="col-text text-uppercase ml-2 mb-0">уровень <br>сложности</p>
+            </div>
+            <div class="duration"></div>
+            <div class="level"></div>
+          </div>
+          <app-course-description [description]="course.description"></app-course-description>
+          <button class="mt-5 text-uppercase w-100 pt-4 pb-4">Выбрать</button>
         </div>
-        <div class="column">
-          <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.level }}</strong></h2>
-          <p class="col-text text-uppercase ml-2 mb-0">уровень <br>сложности</p>
-        </div>
-        <div class="duration"></div>
-        <div class="level"></div>
       </div>
-      <app-course-description [description]="course.description"></app-course-description>
-      <button class="mt-5 text-uppercase w-100 pt-4 pb-4">Выбрать</button>
     </div>
   </div>
 </div>

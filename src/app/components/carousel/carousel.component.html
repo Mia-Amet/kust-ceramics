@@ -1,7 +1,8 @@
-<div class="app-carousel-inner" #ref>
+<div class="app-carousel-inner w-100" #ref>
   <div *ngFor="let pic of pics; index as i" class="app-carousel-item"
-       [ngClass]="{ 'active': ( activeIndex | async ) === i }">
-    <img src="{{ pic }}" alt="{{ courseName }} {{ i + 1 }}">
+       [ngClass]="{ 'active': ( activeIndex | async ) === i }"
+       (swipeleft)="onSwipeLeft($event, ref)" (swiperight)="onSwipeRight($event, ref)">
+    <img class="w-100" src="{{ pic }}" alt="{{ courseName }} {{ i + 1 }}">
   </div>
   <ol class="indicators">
   <li
