@@ -23,6 +23,8 @@ import { CourseDescriptionComponent } from './components/course-description/cour
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { FormatFractionsPipe } from './pipes/format-fractions.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderOldComponent } from './components/header-old/header-old.component';
+import { FooterOldComponent } from './components/footer-old/footer-old.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -43,6 +45,8 @@ export class MyHammerConfig extends HammerGestureConfig {
     CourseDescriptionComponent,
     FormatFractionsPipe,
     FooterComponent,
+    HeaderOldComponent,
+    FooterOldComponent,
   ],
   imports: [
     BrowserModule,
