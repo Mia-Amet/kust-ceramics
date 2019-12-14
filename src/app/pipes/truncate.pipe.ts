@@ -16,7 +16,7 @@ export class TruncatePipe implements PipeTransform {
       i++;
     }
 
-    return `${ stringArr.slice(0, i + 1).join(' ').trim().replace('...', '') }...`;
+    return `${ stringArr.slice(0, i + 1).join(' ').trim().replace(/\.{1,3}$/, '') }...`;
   }
 
 }

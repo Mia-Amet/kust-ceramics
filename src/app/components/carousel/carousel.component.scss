@@ -1,12 +1,11 @@
 img {
-  height: 70vw;
-  min-width: 100vw;
+  height: auto;
   opacity: .8;
 }
 
 .app-carousel-inner {
-  height: 70vw;
-  width: 100vw;
+  position: relative;
+  height: 100%;
   overflow: hidden;
   display: flex;
   .app-carousel-item {
@@ -42,4 +41,8 @@ img {
       background-color: white;
     }
   }
+}
+
+@media screen and (max-width: 499px) {
+
 }

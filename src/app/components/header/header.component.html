@@ -1,6 +1,7 @@
+<div class="header-wrap"></div>
 <div class="header pt-4 pb-4 pr-5 pl-5 flex-centered">
-  <button class="menu-btn btn bg-transparent flex-centered" appTouchListener #touch="appTouchListener"
-          (click)="menuIsOpen = !menuIsOpen">
+  <button class="menu-btn btn bg-transparent d-flex flex-centered" appTouchListener #touch="appTouchListener"
+          (click)="menuIsOpen = !menuIsOpen" *ngIf="(screen | async) <= 1240">
     <svg viewBox="0 0 512 512" x="0" y="0" height="38" width="38">
       <rect fill="none" id="border" y="20" x="10" width="492" height="452" [@border-animation]="( touch.touch | async )"/>
     </svg>
@@ -17,7 +18,7 @@
     </svg>
   </button>
 </div>
-<div class="menu flex-centered pt-2 position-absolute" *ngIf="menuIsOpen" @slide-animation>
+<div class="menu flex-centered pt-2 position-fixed" *ngIf="menuIsOpen" @slide-animation>
   <ul class="navbar-nav text-center w-100">
     <li class="nav-item text-uppercase">
       <a class="nav-link" routerLink="/courses" routerLinkActive="active">Курсы и Мастер-Классы</a>

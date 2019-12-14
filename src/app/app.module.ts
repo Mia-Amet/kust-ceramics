@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import * as Hammer from 'hammerjs';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
@@ -19,6 +23,14 @@ import { CourseDescriptionComponent } from './components/course-description/cour
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { FormatFractionsPipe } from './pipes/format-fractions.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderOldComponent } from './components/header-old/header-old.component';
+import { FooterOldComponent } from './components/footer-old/footer-old.component';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+    swipe: { direction: Hammer.DIRECTION_ALL },
+  };
+}
 
 @NgModule({
   declarations: [
@@ -33,16 +45,24 @@ import { FooterComponent } from './components/footer/footer.component';
     CourseDescriptionComponent,
     FormatFractionsPipe,
     FooterComponent,
+    HeaderOldComponent,
+    FooterOldComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

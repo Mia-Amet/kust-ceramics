@@ -7,8 +7,18 @@
 .header {
   width: 100%;
   margin: 0;
-  background: #0d0f12;
-  z-index: 100;
+  background: transparent;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-wrap {
+  z-index: -1;
+  height: 0;
+  position: relative;
+  transform: translateY(-100%);
 }
 
 .menu {
@@ -16,7 +26,7 @@
   background: #0d0f12;
   flex-direction: column;
   transform: translateY(0);
-  z-index: 99;
+  z-index: 999;
 }
 
 .nav-link {
@@ -69,5 +79,16 @@
 
 #menu-icon {
   fill-opacity: 1;
+}
+
+@media screen and (max-width: 1240px) {
+  .header {
+    background: #0d0f12;
+  }
+
+  .header-wrap {
+    height: 68px;
+    transform: translateY(0);
+  }
 }
 

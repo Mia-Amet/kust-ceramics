@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { animate, group, keyframes, query, state, style, transition, trigger } from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { ScreenService } from '../../services/screen.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -50,10 +52,14 @@ import { animate, group, keyframes, query, state, style, transition, trigger } f
 })
 export class HeaderComponent implements OnInit {
   menuIsOpen = false;
+  screen: Observable<number>;
 
-  constructor() { }
+  constructor(
+    private screenService: ScreenService
+  ) { }
 
   ngOnInit() {
+    this.screen = this.screenService.resize$;
   }
 
 }

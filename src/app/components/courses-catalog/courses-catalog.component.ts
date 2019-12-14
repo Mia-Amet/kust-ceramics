@@ -13,7 +13,7 @@ export class CoursesCatalogComponent implements OnInit {
   courses: Observable<Course[]>;
 
   constructor(
-    private fireStore: AngularFirestore,
+    private fireStore: AngularFirestore
   ) { }
 
   ngOnInit() {

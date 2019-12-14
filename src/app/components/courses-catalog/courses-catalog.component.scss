@@ -14,6 +14,29 @@ button, .col-text {
   letter-spacing: .3em;
 }
 
+app-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.item-responsive {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+  }
+}
+
+.card-carousel {
+  padding-top: 56.25%;
+}
+
 .col-text {
   font-size: 8px;
 }
@@ -40,22 +63,38 @@ button, .col-text {
   color: rgba(174, 240, 245, 0.1);
 }
 
+.courses-wrapper {
+  padding: 0 8%;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card {
+  width: 46%;
+}
+
 .card-heading {
   color: white;
   font: 100 22px/120% 'Roboto', sans-serif;
   letter-spacing: .05em;
+  min-height: 52px;
 }
 
 .card-carousel {
   width: 100%;
-  height: 70vw;
+  height: auto;
   overflow: hidden;
   display: flex;
   align-items: stretch;
 }
 
 .card-body {
-  padding: 24px 7%;
+  padding: 24px 0;
 }
 
 .column {
@@ -86,3 +125,45 @@ button, .col-text {
     }
   }
 }
+
+@media screen and (max-width: 888px) {
+  .card-heading {
+    font-size: 20px;
+    min-height: 52px;
+  }
+
+  .courses-wrapper {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 807px) {
+  .card-heading {
+    min-height: 72px;
+  }
+
+  .courses-wrapper {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  .courses-wrapper {
+    padding: 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 24px 7%;
+  }
+
+  .card-heading {
+    font-size: 22px;
+    min-height: 24px;
+  }
+}
+
+
