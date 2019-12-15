@@ -1,0 +1,26 @@
+<header id="main-header" data-height-onload="69">
+  <div class="container clearfix et_menu_container">
+    <div id="et-top-navigation" data-height="69" data-fixed-height="71" class="w-100">
+      <nav id="top-menu-nav" class="w-100" *ngIf="( screen$ | async ) > 980">
+        <ul id="top-menu" class="nav">
+          <li><a href="#" class="active">КУРСЫ И МАСТЕР-КЛАССЫ</a></li>
+          <li><a href="#">МАГАЗИН</a></li>
+          <li><a href="https://www.kustceramics.com/about-us/">О НАС</a></li>
+        </ul>
+      </nav>
+
+      <div id="et_mobile_nav_menu" *ngIf="( screen$ | async ) < 981">
+        <div class="mobile_nav">
+          <span class="mobile_menu_bar mobile_menu_bar_toggle" (click)="closed = !closed"></span>
+        </div>
+        <div class="mobile_menu position-fixed" *ngIf="!closed" @slide-animation>
+          <ul class="navbar-nav">
+            <li><a href="#" class="active" (click)="closeOnClick()">КУРСЫ И МАСТЕР-КЛАССЫ</a></li>
+            <li><a routerLink="/" (click)="closeOnClick()">МАГАЗИН</a></li>
+            <li><a href="https://www.kustceramics.com/about-us/" (click)="closeOnClick()">О НАС</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- #et-top-navigation -->
+  </div> <!-- .container -->
+</header> <!-- #main-header -->
