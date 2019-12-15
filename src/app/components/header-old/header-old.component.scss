@@ -1,0 +1,116 @@
+.container.et_menu_container {
+  z-index: 99;
+}
+
+.container {
+  max-width: 100%!important;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+header {
+  width: 100vw;
+  background-color: #070d13;
+  position: relative;
+  font-weight: 600;
+  a {
+    color: #d9ebe3;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 32px;
+    &:hover {
+      cursor: pointer;
+      background-color: #78d4ae;
+      color: inherit;
+    }
+  }
+
+  a.active {
+    background-color: #78d4ae;
+    color: inherit;
+  }
+}
+
+ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  li {
+    width: 33%;
+    font-size: 14px;
+    border-right: 1px solid #d9ebe3;
+    position: relative;
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+}
+
+.mobile_nav {
+  background-color:#070d13;
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+
+.mobile_menu {
+  width: 100%;
+  background-color: #070d13;
+}
+
+.mobile_menu_bar {
+  z-index: 1000;
+  height: 80px;
+  position: relative;
+  font-size: 32px;
+  //color: #78d4ae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../../assets/resources/icons/Screenshot 2019-12-10 at 20.03.30.png") 46.5% 19px no-repeat;
+  background-size: 50px 37px;
+  transition: transform .5s cubic-bezier(.82,.02,.52,.91);
+}
+
+@media screen and (max-width: 980px) {
+  header {
+    a {
+      border-left: 1px solid #d9ebe3;
+      padding: 12px 44.1px;
+    }
+    a.active {
+      background-color: #070d13;
+      color: #d9ebe3;
+      border-left: 0;
+      &:hover {
+        cursor: pointer;
+        background-color: #78d4ae;
+        color: inherit;
+      }
+    }
+  }
+
+  ul {
+    border-top: 3px solid #2ea3f2;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 47px 49px;
+    width: 100%;
+    li {
+      text-align: left;
+      border-right: 0;
+      width: 100%;
+    }
+  }
+}
+
