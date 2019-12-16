@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CarouselService } from '../../services/carousel.service';
 import { Observable } from 'rxjs';
 
@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  providers: [CarouselService]
+  providers: [ CarouselService ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements OnInit {
   activeIndex: Observable<number>;
@@ -27,12 +28,14 @@ export class CarouselComponent implements OnInit {
     const index = this.index < this.pics.length - 1 ? this.index + 1 : 0;
     this.slideToIndex(index, paneElement);
     this.index = index;
+    console.log('SWIPE LEFT');
   }
 
   onSwipeRight(event, paneElement: Element) {
     const index = this.index > 0 ? this.index - 1 : this.pics.length - 1;
     this.slideToIndex(index, paneElement);
     this.index = index;
+    console.log('SWIPE RIGHT');
   }
 
   slideToIndex(index: number, paneElement: Element) {
@@ -42,31 +45,18 @@ export class CarouselComponent implements OnInit {
     const currentSlide = slides.find(slide => slide.classList.contains('active'));
     const nextSlide = slides[index];
 
-    const options: KeyframeAnimationOptions = {
-      duration: 500,
-      easing: 'ease-in-out',
-      fill: 'forwards'
-    };
-
     if (index > this.index) {
-      currentSlide.animate([
-        { transform: `translateX(0)` },
-        { transform: `translateX(-100%)` }
-      ], options);
-      nextSlide.animate([
-        { transform: `translateX(100%)` },
-        { transform: `translateX(0)` }
-      ], options);
+      currentSlide.classList.add('to-left');
+      nextSlide.classList.add('from-left');
     } else {
-      currentSlide.animate([
-        { transform: `translateX(0)` },
-        { transform: `translateX(100%)` }
-      ], options);
-      nextSlide.animate([
-        { transform: `translateX(-100%)` },
-        { transform: `translateX(0)` }
-      ], options);
+      currentSlide.classList.add('to-right');
+      nextSlide.classList.add('from-right');
     }
+
+    setTimeout(() => {
+      currentSlide.classList.remove('to-right', 'to-left');
+      nextSlide.classList.remove('from-left', 'from-right');
+    }, 510);
 
     this.carouselService.emitIndex(index);
     this.index = index;

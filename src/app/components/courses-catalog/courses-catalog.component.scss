@@ -2,18 +2,6 @@ h2 {
   font: 600 32px/120% 'Cabin', sans-serif;
 }
 
-button {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  outline: none;
-}
-
-button, .col-text {
-  font: 700 9px/120% 'Montserrat', sans-serif;
-  letter-spacing: .3em;
-}
-
 app-carousel {
   position: absolute;
   top: 0;
@@ -22,6 +10,46 @@ app-carousel {
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+
+a.button {
+  display: block;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+  text-align: center;
+  overflow: hidden;
+  transition: color .3s ease-in-out;
+  text-decoration: none;
+  span {
+    z-index: 99;
+  }
+  &:before {
+    content: '';
+    background: white;
+    position: absolute;
+    border: 2px solid white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+  }
+  &:hover, &:focus {
+    cursor: pointer;
+    color: #1b1b1b;
+    &:before {
+      transform: translateX(0);
+    }
+  }
+}
+
+a.button, .col-text {
+  font: 700 9px/120% 'Montserrat', sans-serif;
+  letter-spacing: .3em;
 }
 
 .item-responsive {

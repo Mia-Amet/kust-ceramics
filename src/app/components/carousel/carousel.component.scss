@@ -1,3 +1,23 @@
+@keyframes slideToLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slideFromLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideToRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes slideFromRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
 img {
   height: auto;
   opacity: .8;
@@ -43,6 +63,20 @@ img {
   }
 }
 
-@media screen and (max-width: 499px) {
-
+.to-left {
+  animation: slideToLeft .5s ease-in-out forwards;
 }
+
+.from-left {
+  animation: slideFromLeft .5s ease-in-out forwards;
+}
+
+.to-right {
+  animation: slideToRight .5s ease-in-out forwards;
+}
+
+.from-right {
+  animation: slideFromRight .5s ease-in-out forwards;
+}
+
+
