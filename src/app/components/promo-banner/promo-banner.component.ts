@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Router } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-promo-banner',
   templateUrl: './promo-banner.component.html',
   styleUrls: ['./promo-banner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('leaf-rotation', [
       transition(':increment', [
@@ -37,6 +37,6 @@ export class PromoBannerComponent implements OnInit {
   }
 
   scrollDown() {
-    this.scrollService.scrollDown();
+    this.scrollService.smoothScroll();
   }
 }

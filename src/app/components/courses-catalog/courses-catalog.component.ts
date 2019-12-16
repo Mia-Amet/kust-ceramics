@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -7,7 +7,8 @@ import { Course } from '../../models/Course';
 @Component({
   selector: 'app-courses-catalog',
   templateUrl: './courses-catalog.component.html',
-  styleUrls: ['./courses-catalog.component.scss']
+  styleUrls: ['./courses-catalog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesCatalogComponent implements OnInit {
   courses: Observable<Course[]>;

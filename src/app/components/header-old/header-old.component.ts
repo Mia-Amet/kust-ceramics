@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ScreenService } from '../../services/screen.service';
 import { Observable } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -7,6 +7,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   selector: 'app-header-old',
   templateUrl: './header-old.component.html',
   styleUrls: ['./header-old.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slide-animation', [
       transition(':enter', [

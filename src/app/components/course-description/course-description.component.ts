@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CourseDescription } from '../../models/Course';
-import { animate, group, query, style, transition, trigger } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-course-description',
   templateUrl: './course-description.component.html',
   styleUrls: ['./course-description.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('collapse-animation', [
       transition(':enter', [
