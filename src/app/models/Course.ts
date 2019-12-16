@@ -3,6 +3,12 @@ export interface CourseDescription {
   advantages: string[];
 }
 
+interface CourseLinks {
+  buy: string;
+  certificate: string;
+  roving?: string;
+}
+
 interface CourseDuration {
   inHours: number;
   inClasses?: number;
@@ -16,4 +22,5 @@ export interface Course {
   description: CourseDescription;
   canBeRoving: boolean;
   photos: string[];
+  links: CourseLinks;
 }

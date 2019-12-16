@@ -4,19 +4,19 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
-  max = 150;
+  max = 149;
 
   transform(value: string): string {
-    let stringArr = value.split(' ');
-    let sum = 0;
-    let i = 0;
-    while (i < stringArr.length) {
-      sum += stringArr[i].length + 1;
-      if (sum >= this.max) break;
-      i++;
+    let truncated = value.slice(0, this.max).trim();
+    if (value[truncated.length] !== ' ') {
+      for(let i = truncated.length - 1; i >= 0; i--) {
+        if (truncated[i] === ' ') break;
+        truncated = truncated.slice(0, i);
+      }
+      truncated = truncated.trim();
     }
 
-    return `${ stringArr.slice(0, i + 1).join(' ').trim().replace(/\.{1,3}$/, '') }...`;
+    return `${truncated.replace(/[-–.,]{1,3}$/, '')}...`;
   }
 
 }
