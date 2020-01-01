@@ -21,7 +21,8 @@ export class CoursesCatalogComponent implements OnInit {
     this.courses = this.fireStore.collection('courses')
       .get()
       .pipe(
-        map(querySnapshot => querySnapshot.docs.map(doc => <Course>doc.data()))
+        map(querySnapshot => querySnapshot.docs.map(doc => <Course>doc.data())),
+        map(courses => courses.filter(course => course.photos.length))
       );
   }
 
