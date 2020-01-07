@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CarouselService } from '../../services/carousel.service';
 import { Observable } from 'rxjs';
+import { CarouselService } from '../../services/carousel.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-carousel',
@@ -17,7 +18,8 @@ export class CarouselComponent implements OnInit {
   @Input() courseName: string;
 
   constructor(
-    private carouselService: CarouselService
+    private carouselService: CarouselService,
+    private scrollService: ScrollService
   ) { }
 
   ngOnInit() {
@@ -28,14 +30,12 @@ export class CarouselComponent implements OnInit {
     const index = this.index < this.pics.length - 1 ? this.index + 1 : 0;
     this.slideToIndex(index, paneElement);
     this.index = index;
-    console.log('SWIPE LEFT');
   }
 
   onSwipeRight(event, paneElement: Element) {
     const index = this.index > 0 ? this.index - 1 : this.pics.length - 1;
     this.slideToIndex(index, paneElement);
     this.index = index;
-    console.log('SWIPE RIGHT');
   }
 
   slideToIndex(index: number, paneElement: Element) {
