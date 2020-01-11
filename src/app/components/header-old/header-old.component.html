@@ -13,7 +13,7 @@
         <div class="mobile_nav">
           <span class="mobile_menu_bar mobile_menu_bar_toggle" (click)="closed = !closed"></span>
         </div>
-        <div class="mobile_menu position-fixed" *ngIf="!closed" @slide-animation>
+        <div class="mobile_menu position-absolute" *ngIf="!closed" @slide-animation>
           <ul class="navbar-nav">
             <li><a href="#" class="active" (click)="closeOnClick()">КУРСЫ И МАСТЕР-КЛАССЫ</a></li>
             <li><a routerLink="/" (click)="closeOnClick()">МАГАЗИН</a></li>
