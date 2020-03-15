@@ -28,14 +28,8 @@
             <div class="level"></div>
           </div>
           <app-course-description [description]="course.description"></app-course-description>
-          <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" [href]="course.links.buy">
-            <span>Записаться</span>
-          </a>
-          <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" [href]="course.links.certificate">
-            <span>Подарочный сертификат</span>
-          </a>
-          <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" *ngIf="course.links.roving" [href]="course.links.roving">
-            <span>Выездной мастер-класс</span>
+          <a class="button text-uppercase w-100 pt-4 pb-4" routerLink="/courses/{{ course.courseId }}">
+            <span>Подробнее</span>
           </a>
         </div>
       </div>

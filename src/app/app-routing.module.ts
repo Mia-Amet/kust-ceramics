@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 
-import { CoursesCatalogComponent } from './components/courses-catalog/courses-catalog.component';
+import { CourseComponent } from './components/course/course.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Route[] = [
-  { path: 'courses', component: CoursesCatalogComponent },
+  { path: 'courses', component: HomeComponent },
+  { path: 'courses/:courseId', component: CourseComponent },
   { path: '', redirectTo: '/courses', pathMatch: 'full' }
 ];
 

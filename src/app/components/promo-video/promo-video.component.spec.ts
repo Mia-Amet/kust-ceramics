@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PromoBannerComponent } from './promo-banner.component';
+import { PromoVideoComponent } from './promo-video.component';
 
 describe('PromoBannerComponent', () => {
-  let component: PromoBannerComponent;
-  let fixture: ComponentFixture<PromoBannerComponent>;
+  let component: PromoVideoComponent;
+  let fixture: ComponentFixture<PromoVideoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PromoBannerComponent ]
+      declarations: [ PromoVideoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PromoBannerComponent);
+    fixture = TestBed.createComponent(PromoVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

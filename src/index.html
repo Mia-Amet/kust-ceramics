@@ -11,13 +11,16 @@
   <body>
     <app-root></app-root>
     <script>
-      window.addEventListener('load', async () => {
-        let video = document.querySelector('#promo-video');
-        if (video) {
-          video.volume = 0;
-          await video.play();
-        }
-      });
+      setTimeout(() => {
+          let video = document.querySelector('#promo-video');
+          if (!video) return;
+          let autoplay = video.play();
+          if (autoplay !== undefined) {
+              autoplay.catch(err => {
+                  console.log(err);
+              }).then(() => {})
+          }
+      }, 300);
     </script>
   </body>
 </html>

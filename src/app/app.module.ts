@@ -17,13 +17,15 @@ import { CoursesCatalogComponent } from './components/courses-catalog/courses-ca
 import { HeaderComponent } from './components/header/header.component';
 import { HoverListenerDirective } from './directives/hover-listener.directive';
 import { TouchListenerDirective } from './directives/touch-listener.directive';
-import { PromoBannerComponent } from './components/promo-banner/promo-banner.component';
+import { PromoVideoComponent } from './components/promo-video/promo-video.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CourseDescriptionComponent } from './components/course-description/course-description.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { FormatFractionsPipe } from './pipes/format-fractions.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderOldComponent } from './components/header-old/header-old.component';
+import { CourseComponent } from './components/course/course.component';
+import { HomeComponent } from './components/home/home.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
@@ -41,13 +43,15 @@ export class MyHammerConfig extends HammerGestureConfig {
     HeaderComponent,
     HoverListenerDirective,
     TouchListenerDirective,
-    PromoBannerComponent,
+    PromoVideoComponent,
     CarouselComponent,
     TruncatePipe,
     CourseDescriptionComponent,
     FormatFractionsPipe,
     FooterComponent,
     HeaderOldComponent,
+    CourseComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

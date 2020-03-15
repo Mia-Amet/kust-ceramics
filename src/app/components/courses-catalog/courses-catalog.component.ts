@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Course } from '../../models/Course';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-courses-catalog',
@@ -14,16 +15,11 @@ export class CoursesCatalogComponent implements OnInit {
   courses: Observable<Course[]>;
 
   constructor(
-    private fireStore: AngularFirestore
+    private coursesService: CoursesService
   ) { }
 
   ngOnInit() {
-    this.courses = this.fireStore.collection('courses')
-      .get()
-      .pipe(
-        map(querySnapshot => querySnapshot.docs.map(doc => <Course>doc.data())),
-        map(courses => courses.filter(course => course.photos.length))
-      );
+    this.courses = this.coursesService.courses$;
   }
 
 }

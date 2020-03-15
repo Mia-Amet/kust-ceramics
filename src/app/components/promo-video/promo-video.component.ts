@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-promo-banner',
-  templateUrl: './promo-banner.component.html',
-  styleUrls: ['./promo-banner.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './promo-video.component.html',
+  styleUrls: ['./promo-video.component.scss'],
   animations: [
     trigger('leaf-rotation', [
       transition(':increment', [
@@ -20,7 +19,7 @@ import { ScrollService } from '../../services/scroll.service';
     ])
   ]
 })
-export class PromoBannerComponent implements OnInit {
+export class PromoVideoComponent implements OnInit {
   leafTimer = 0;
 
   constructor(
@@ -29,10 +28,10 @@ export class PromoBannerComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.leafTimer++;
+      this.leafTimer += 1;
       setInterval(() => {
         this.leafTimer += 1;
-      }, 8000);
+      }, 5000);
     }, 1000);
   }
 

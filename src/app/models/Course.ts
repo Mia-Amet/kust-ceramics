@@ -23,4 +23,6 @@ export interface Course {
   canBeRoving: boolean;
   photos: string[];
   links: CourseLinks;
+  id: string;
+  courseId: string;
 }

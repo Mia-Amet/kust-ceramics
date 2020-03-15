@@ -75,3 +75,9 @@ h4 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    background-size: auto 100%;
+  }
+}
+
