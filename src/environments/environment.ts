@@ -11,7 +11,7 @@ export const environment = {
     projectId: 'kust-f4e04',
     storageBucket: 'kust-f4e04.appspot.com',
     messagingSenderId: '768892253154',
-    appId: '1:768892253154:web:8c7bbfe074ac41dc8abfbb'
+    appId: '1:768892253154:web:76c111d40897bc4e8abfbb'
   }
 };
 

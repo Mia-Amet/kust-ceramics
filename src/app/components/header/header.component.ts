@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { ScreenService } from '../../services/screen.service';
-import { Observable } from 'rxjs';
+import { iif, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-header',
@@ -53,6 +55,8 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
   menuIsOpen = false;
   screen: Observable<number>;
+  scrollTop: Observable<number>;
+  mobile: Observable<boolean>;
 
   constructor(
     private screenService: ScreenService
@@ -60,6 +64,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.screen = this.screenService.resize$;
+    this.mobile = this.screenService.resize$.pipe(
+      map(screeSize => screeSize < 1240)
+    );
+    this.scrollTop = this.screenService.scroll$;
   }
 
 }

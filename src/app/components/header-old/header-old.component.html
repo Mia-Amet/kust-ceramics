@@ -3,9 +3,9 @@
     <div id="et-top-navigation" data-height="69" data-fixed-height="71" class="w-100">
       <nav id="top-menu-nav" class="w-100" *ngIf="( screen$ | async ) > 980">
         <ul id="top-menu" class="nav">
-          <li><a href="#" class="active">КУРСЫ И МАСТЕР-КЛАССЫ</a></li>
+          <li><a href="#" class="active">КУРСИ ТА МАЙСТЕР-КЛАСИ</a></li>
           <li><a href="#">МАГАЗИН</a></li>
-          <li><a href="https://www.kustceramics.com/about-us/">О НАС</a></li>
+          <li><a href="https://www.kustceramics.com/about-us/">ПРО НАС</a></li>
         </ul>
       </nav>
 
@@ -15,9 +15,9 @@
         </div>
         <div class="mobile_menu position-absolute" *ngIf="!closed" @slide-animation>
           <ul class="navbar-nav">
-            <li><a href="#" class="active" (click)="closeOnClick()">КУРСЫ И МАСТЕР-КЛАССЫ</a></li>
-            <li><a routerLink="/" (click)="closeOnClick()">МАГАЗИН</a></li>
-            <li><a href="https://www.kustceramics.com/about-us/" (click)="closeOnClick()">О НАС</a></li>
+            <li><a href="#" class="active" (click)="closeOnClick()">КУРСИ ТА МАЙСТЕР-КЛАСИ</a></li>
+            <li><a routerLink="#" (click)="closeOnClick()">МАГАЗИН</a></li>
+            <li><a href="https://www.kustceramics.com/about-us/" (click)="closeOnClick()">ПРО НАС</a></li>
           </ul>
         </div>
       </div>

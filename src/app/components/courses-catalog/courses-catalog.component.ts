@@ -18,11 +18,29 @@ export class CoursesCatalogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.courses = this.fireStore.collection('courses')
+    const compareFn = (a, b) => {
+      if (a.group < b.group)
+        return -1;
+      if (a.group > b.group)
+        return 1;
+      return 0;
+    };
+
+    const price = (a, b) => {
+      if (a.price < b.price)
+        return -1;
+      if (a.price > b.price)
+        return 1;
+      return 0;
+    };
+
+    this.courses = this.fireStore.collection('courses_ua_local')
       .get()
       .pipe(
         map(querySnapshot => querySnapshot.docs.map(doc => <Course>doc.data())),
-        map(courses => courses.filter(course => course.photos.length))
+        map(courses => courses.filter(course => course.photos.length)),
+        map(courses => courses.sort(price)),
+        map(courses => courses.sort(compareFn))
       );
   }
 

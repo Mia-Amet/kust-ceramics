@@ -1,6 +1,7 @@
 .flex-centered {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -22,11 +23,21 @@
 }
 
 .menu {
-  width: 100%;
+  width: 100vw;
   background: #0d0f12;
   flex-direction: column;
   transform: translateY(0);
   z-index: 999;
+  padding: 10px 7%;
+  transition: background .2s ease-in-out;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav {
+  flex-direction: row;
 }
 
 .nav-link {
@@ -48,6 +59,18 @@
   padding: 0;
   height: 1px;
   margin: 0 5%;
+  display: none;
+}
+
+.social a {
+  margin: 0 10px;
+}
+
+.social svg {
+  fill: whitesmoke;
+  transition: fill .2s ease-in-out;
+  &:hover {
+    fill: #7ad4c7;
 }
 
 .menu-btn {
@@ -82,6 +105,10 @@
 }
 
 @media screen and (max-width: 1240px) {
+  .flex-centered {
+    justify-content: center;
+  }
+
   .header {
     background: #0d0f12;
   }
@@ -89,6 +116,25 @@
   .header-wrap {
     height: 68px;
     transform: translateY(0);
+  }
+}
+  .divider {
+    display: block;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu {
+    background: #0d0f12 !important;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  a.logo, a.logo svg, .social {
+    display: none;
   }
 }
 
