@@ -18,7 +18,7 @@ h4 {
 
 .container-fluid {
   height: 450px;
-  background: url("https://kustceramics.com/assets/video/video-poster.png") no-repeat;
+  background: url("/assets/video/video-poster.webp") no-repeat;
   background-size: 100vw auto;
 }
 
@@ -75,3 +75,8 @@ h4 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    background-size: auto 100%;
+  }
+}

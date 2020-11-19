@@ -6,7 +6,7 @@ import { ScrollService } from '../../services/scroll.service';
   selector: 'app-promo-banner',
   templateUrl: './promo-banner.component.html',
   styleUrls: ['./promo-banner.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('leaf-rotation', [
       transition(':increment', [
@@ -29,10 +29,10 @@ export class PromoBannerComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.leafTimer++;
+      this.leafTimer = +1;
       setInterval(() => {
         this.leafTimer += 1;
-      }, 8000);
+      }, 5000);
     }, 1000);
   }
 

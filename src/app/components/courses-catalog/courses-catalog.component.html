@@ -1,7 +1,7 @@
 <div class="container-fluid p-0 pt-1 mt-5 mb-3">
   <p class="and position-absolute m-0 p-0">&</p>
   <h1 class="section-heading text-uppercase mt-5">
-    <strong>Курсы<br> <span>мастер-классы</span></strong>
+    <strong>Курси<br> <span>майстер-класи</span></strong>
   </h1>
   <div class="courses-wrapper w-100">
     <div class="courses w-100">
@@ -13,29 +13,29 @@
           <h1 class="card-heading mt-4">{{ course.name | uppercase }}</h1>
           <div class="card-icons p-0 d-flex justify-content-between w-100">
             <div class="column">
-              <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.price }}</strong></h2>
+              <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.price.fullPrice }}</strong></h2>
               <p class="col-text text-uppercase ml-2">грн</p>
             </div>
             <div class="column">
               <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.duration.inHours | formatFractions }}</strong></h2>
-              <p class="col-text text-uppercase ml-2">часа</p>
+              <p class="col-text text-uppercase ml-2">години</p>
             </div>
             <div class="column">
               <h2 class="p-0 m-0 font-weight-bold"><strong>{{ course.level }}</strong></h2>
-              <p class="col-text text-uppercase ml-2 mb-0">уровень <br>сложности</p>
+              <p class="col-text text-uppercase ml-2 mb-0">рівень <br>складності</p>
             </div>
             <div class="duration"></div>
             <div class="level"></div>
           </div>
           <app-course-description [description]="course.description"></app-course-description>
           <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" [href]="course.links.buy">
-            <span>Записаться</span>
+            <span>Записатися</span>
           </a>
           <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" [href]="course.links.certificate">
-            <span>Подарочный сертификат</span>
+            <span>Подарунковий сертефікат</span>
           </a>
           <a class="button mt-5 text-uppercase w-100 pt-4 pb-4" *ngIf="course.links.roving" [href]="course.links.roving">
-            <span>Выездной мастер-класс</span>
+            <span>Виїздний майстер-клас</span>
           </a>
         </div>
       </div>

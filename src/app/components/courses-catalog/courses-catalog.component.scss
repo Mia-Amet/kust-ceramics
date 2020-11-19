@@ -22,6 +22,7 @@ a.button {
   overflow: hidden;
   transition: color .3s ease-in-out;
   text-decoration: none;
+  margin: 10px 0 20px 0;
   span {
     z-index: 99;
   }
@@ -92,7 +93,7 @@ a.button, .col-text {
 }
 
 .courses-wrapper {
-  padding: 0 8%;
+  padding: 0 7%;
 }
 
 .courses {
@@ -191,6 +192,10 @@ a.button, .col-text {
   .card-heading {
     font-size: 22px;
     min-height: 24px;
+  }
+
+  a.button {
+    margin: 30px 0 0;
   }
 }
 

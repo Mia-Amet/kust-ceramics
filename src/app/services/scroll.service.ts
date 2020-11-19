@@ -34,7 +34,7 @@ export class ScrollService {
         y += node.offsetTop;
     }
 
-    return y;
+    return y - 98;
   }
 
   smoothScroll() {
@@ -43,7 +43,7 @@ export class ScrollService {
     const distance = stopY - startY;
 
     let speed = Math.round(distance / 75);
-    if (speed >= 20) speed = 20;
+    if (speed >= 15) speed = 15;
 
     let step = Math.round(distance / 50);
     let leapY = startY + step;
