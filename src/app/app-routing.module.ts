@@ -5,7 +5,7 @@ import { CoursesCatalogComponent } from './components/courses-catalog/courses-ca
 
 const routes: Route[] = [
   { path: 'courses', component: CoursesCatalogComponent },
-  { path: '/', component: CoursesCatalogComponent }
+  { path: '', component: CoursesCatalogComponent }
   // { path: '', redirectTo: '/courses', pathMatch: 'full' }
 ];
 
